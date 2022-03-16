@@ -39,19 +39,21 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   let afinAddress: string;
   let mvpAddress: string;
 
-  afinAddress = (await get('afin')).address;
-  mvpAddress = (await get('mvp')).address;
+  //afinAddress = (await get('afin')).address;
+  //mvpAddress = (await get('mvp')).address;
 
   const MetaHornbillArgs: { [key: string]: any } = {};
 
   MetaHornbillArgs[`_NFT_NAM`] = 'MetaHornbill';
-  MetaHornbillArgs[`_NFT_SYMBOL`] = 'AFIN';
-  MetaHornbillArgs[`_AVAILABLE_SUPPLY`] = 5;
+  MetaHornbillArgs[`_NFT_SYMBOL`] = 'METAHORNBILL';
+  MetaHornbillArgs[`_AVAILABLE_SUPPLY`] = 2000;
   MetaHornbillArgs[`_MINT_PRE_START_TIME`] = 1648904400;
   MetaHornbillArgs[`_MINT_START_TIME`] = 1649077200;
   MetaHornbillArgs[`_MINT_END_TIME`] = 1649250000;
-  MetaHornbillArgs[`_afin`] = afinAddress;
-  MetaHornbillArgs[`_mvp`] = mvpAddress;
+  MetaHornbillArgs[`_afin`] = "0xb955b4cab9aa3b49e23aeb5204ebc5ff6678e86d";
+  MetaHornbillArgs[`_mvp`] = "0x3379a0bdf5a5cb566127c421782686ba0f80490a";
+  MetaHornbillArgs[`_feeAddress`] = deployer;
+
 
 
 
@@ -70,7 +72,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   log(`Could be found at ....`)
   log(chalk.yellow(`/deployment/${network.name}/${deploymentName}.json`))
 
-  if (MetaHornbillResult.newlyDeployed) {
+  if (true) {
 
     log(`contract address (MetaHornbill): ${chalk.green(MetaHornbillResult.address)} using ${MetaHornbillResult.receipt?.gasUsed} gas`);
 
@@ -83,19 +85,19 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       BigNumber.from("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
     ];
 
-    await execute(
-      'afin',
-      {from: deployer, log: true}, 
-      "approve",
-      ...approveArgs
-    )
+    // await execute(
+    //   'afin',
+    //   {from: deployer, log: true}, 
+    //   "approve",
+    //   ...approveArgs
+    // )
 
-    await execute(
-      'mvp',
-      {from: deployer, log: true}, 
-      "approve",
-      ...approveArgs
-    )
+    // await execute(
+    //   'mvp',
+    //   {from: deployer, log: true}, 
+    //   "approve",
+    //   ...approveArgs
+    // )
 
 
     if (hre.network.tags.production || hre.network.tags.staging) {
@@ -123,4 +125,4 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 }
 export default func;
 func.tags = ["1-3", "metahornbill"];
-func.dependencies = ["1-2"];
+//func.dependencies = ["1-2"];

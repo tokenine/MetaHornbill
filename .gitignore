@@ -1,6 +1,6 @@
 cache/
 artifacts/
-
+deploy/
 coverage*
 typechain/
 
@@ -12,7 +12,7 @@ typechain/
 .DS_Store
 Thumbs.db
 node_modules/
-deploy/
+
 .env
 
 .yalc
