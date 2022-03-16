@@ -1,0 +1,1031 @@
+{
+  "address": "0x3A65dD2EFD7E5370DaFAdaE92677Bcd64f3640EA",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "BallotId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "BallotType",
+          "type": "uint256"
+        }
+      ],
+      "name": "CreateBallot",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "CREATOR_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ballotId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "choice",
+          "type": "string"
+        }
+      ],
+      "name": "addChoice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ballotId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "_voters",
+          "type": "address[]"
+        }
+      ],
+      "name": "addWhitelistedVoters",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "addchoices",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "ballots",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isKyc",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "isChoiceAddable",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "start",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "end",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ballotType",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "bool",
+          "name": "isKyc",
+          "type": "bool"
+        },
+        {
+          "internalType": "string[]",
+          "name": "_choices",
+          "type": "string[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "start",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ballotType",
+          "type": "uint256"
+        }
+      ],
+      "name": "createBallot",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ballotId",
+          "type": "uint256"
+        }
+      ],
+      "name": "deleteBallot",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        }
+      ],
+      "name": "getBallotIdsByAddress",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getCreatorBallotIds",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleAdmin",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRoleMember",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRoleMemberCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "grantRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "hasRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ballotId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isWhitelisted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "renounceRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ballotId",
+          "type": "uint256"
+        }
+      ],
+      "name": "results",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "votes",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Voting.Choice[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "revokeRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ballotId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "choiceId",
+          "type": "uint256"
+        }
+      ],
+      "name": "vote",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "votes",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x5edf98bdad77c693c9c9715c7b1790f6b3e49fe9f995468d8b40bc36556a6711",
+  "receipt": {
+    "to": null,
+    "from": "0x7D56A1613a27EA89cc980fd2591933bE1CfD38D4",
+    "contractAddress": "0x3A65dD2EFD7E5370DaFAdaE92677Bcd64f3640EA",
+    "transactionIndex": 145,
+    "gasUsed": "1975622",
+    "logsBloom": "0x00000024000000000000000000000000000000000000000000000000000002000000000000000000000401000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000800001000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000001000000000000000000000000000000000000001000000000400000000000000000000000000000000000000000000000000100000000000020000000000000000000000000000010000000000000000000000000000000000000",
+    "blockHash": "0x73e068ac24c323170ecac4255ab9963aabcb1a30b4a2e130137c61605de2144c",
+    "transactionHash": "0x5edf98bdad77c693c9c9715c7b1790f6b3e49fe9f995468d8b40bc36556a6711",
+    "logs": [
+      {
+        "transactionIndex": 145,
+        "blockNumber": 14975743,
+        "transactionHash": "0x5edf98bdad77c693c9c9715c7b1790f6b3e49fe9f995468d8b40bc36556a6711",
+        "address": "0x3A65dD2EFD7E5370DaFAdaE92677Bcd64f3640EA",
+        "topics": [
+          "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000007d56a1613a27ea89cc980fd2591933be1cfd38d4",
+          "0x0000000000000000000000007d56a1613a27ea89cc980fd2591933be1cfd38d4"
+        ],
+        "data": "0x",
+        "logIndex": 617,
+        "blockHash": "0x73e068ac24c323170ecac4255ab9963aabcb1a30b4a2e130137c61605de2144c"
+      },
+      {
+        "transactionIndex": 145,
+        "blockNumber": 14975743,
+        "transactionHash": "0x5edf98bdad77c693c9c9715c7b1790f6b3e49fe9f995468d8b40bc36556a6711",
+        "address": "0x3A65dD2EFD7E5370DaFAdaE92677Bcd64f3640EA",
+        "topics": [
+          "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d",
+          "0x828634d95e775031b9ff576b159a8509d3053581a8c9c4d7d86899e0afcd882f",
+          "0x0000000000000000000000007d56a1613a27ea89cc980fd2591933be1cfd38d4",
+          "0x0000000000000000000000007d56a1613a27ea89cc980fd2591933be1cfd38d4"
+        ],
+        "data": "0x",
+        "logIndex": 618,
+        "blockHash": "0x73e068ac24c323170ecac4255ab9963aabcb1a30b4a2e130137c61605de2144c"
+      }
+    ],
+    "blockNumber": 14975743,
+    "cumulativeGasUsed": "28133765",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "6e2ab604b3cecb470e921534d53e7e3b",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"BallotId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"BallotType\",\"type\":\"uint256\"}],\"name\":\"CreateBallot\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"CREATOR_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ballotId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"choice\",\"type\":\"string\"}],\"name\":\"addChoice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ballotId\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"_voters\",\"type\":\"address[]\"}],\"name\":\"addWhitelistedVoters\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"addchoices\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"ballots\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"isKyc\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"isChoiceAddable\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"end\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ballotType\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"isKyc\",\"type\":\"bool\"},{\"internalType\":\"string[]\",\"name\":\"_choices\",\"type\":\"string[]\"},{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"duration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"ballotType\",\"type\":\"uint256\"}],\"name\":\"createBallot\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ballotId\",\"type\":\"uint256\"}],\"name\":\"deleteBallot\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"}],\"name\":\"getBallotIdsByAddress\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCreatorBallotIds\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getRoleMember\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleMemberCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ballotId\",\"type\":\"uint256\"}],\"name\":\"isWhitelisted\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ballotId\",\"type\":\"uint256\"}],\"name\":\"results\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"votes\",\"type\":\"uint256\"}],\"internalType\":\"struct Voting.Choice[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"ballotId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"choiceId\",\"type\":\"uint256\"}],\"name\":\"vote\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"votes\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getRoleAdmin(bytes32)\":{\"details\":\"Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}.\"},\"getRoleMember(bytes32,uint256)\":{\"details\":\"Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information.\"},\"getRoleMemberCount(bytes32)\":{\"details\":\"Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role.\"},\"grantRole(bytes32,address)\":{\"details\":\"Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.\"},\"hasRole(bytes32,address)\":{\"details\":\"Returns `true` if `account` has been granted `role`.\"},\"renounceRole(bytes32,address)\":{\"details\":\"Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`.\"},\"revokeRole(bytes32,address)\":{\"details\":\"Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.\"},\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Voting.sol\":\"Voting\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/Voting.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./openzeppelin/v4/access/AccessControlEnumerable.sol\\\";\\r\\nimport \\\"./openzeppelin/v4/utils/structs/EnumerableSet.sol\\\";\\r\\n\\r\\n\\r\\ncontract Voting is AccessControlEnumerable {\\r\\n\\r\\n    using EnumerableSet for EnumerableSet.UintSet;\\r\\n\\r\\n    bytes32 public constant CREATOR_ROLE = keccak256(\\\"CREATOR_ROLE\\\");\\r\\n\\r\\n\\r\\n    struct Choice {\\r\\n        uint id;\\r\\n        string name;\\r\\n        uint votes;\\r\\n    }\\r\\n\\r\\n    struct Ballot {\\r\\n        uint id;\\r\\n        string name;\\r\\n        address owner;\\r\\n        bool isKyc;\\r\\n        bool isChoiceAddable;\\r\\n        Choice[] choices;\\r\\n        uint start;\\r\\n        uint end;\\r\\n        uint ballotType;\\r\\n    }\\r\\n\\r\\n\\r\\n    mapping(uint => Ballot) public ballots;\\r\\n    mapping(uint => mapping(address => bool)) whitelistedvoters;\\r\\n    mapping(address => mapping(uint => bool)) public votes;\\r\\n    mapping(address => mapping(uint => bool)) public addchoices;\\r\\n\\r\\n    event CreateBallot(uint BallotId , uint BallotType);\\r\\n\\r\\n    uint nextBallotId;\\r\\n\\r\\n    mapping(address => EnumerableSet.UintSet) private creatorBallotIds;\\r\\n\\r\\n    constructor() {\\r\\n        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);\\r\\n        _grantRole(CREATOR_ROLE, msg.sender);\\r\\n    }\\r\\n\\r\\n    function createBallot(\\r\\n        string memory name,\\r\\n        bool isKyc,\\r\\n        string[] calldata _choices,\\r\\n        uint start,\\r\\n        uint duration,\\r\\n        uint ballotType\\r\\n    )\\r\\n        onlyRole(CREATOR_ROLE)\\r\\n        external\\r\\n    {\\r\\n\\r\\n      ballots[nextBallotId].id = nextBallotId; \\r\\n      ballots[nextBallotId].name = name;\\r\\n      ballots[nextBallotId].owner = msg.sender;\\r\\n      ballots[nextBallotId].isKyc = isKyc;\\r\\n      ballots[nextBallotId].ballotType = ballotType;\\r\\n      ballots[nextBallotId].start = start;\\r\\n      ballots[nextBallotId].end = start + duration;\\r\\n\\r\\n    if (ballots[nextBallotId].ballotType == 0) {\\r\\n        ballots[nextBallotId].choices.push(Choice(0, 'True', 0));\\r\\n        ballots[nextBallotId].choices.push(Choice(1, 'False', 0));\\r\\n        ballots[nextBallotId].isChoiceAddable = false;\\r\\n\\r\\n\\r\\n    }\\r\\n\\r\\n    else if (ballots[nextBallotId].ballotType == 1) {\\r\\n        for(uint i = 0; i < _choices.length ; i++) {\\r\\n        ballots[nextBallotId].choices.push(Choice(i, _choices[i], 0));\\r\\n        ballots[nextBallotId].isChoiceAddable = false;\\r\\n\\r\\n      }\\r\\n    }\\r\\n\\r\\n    else if (ballots[nextBallotId].ballotType == 2) {\\r\\n        ballots[nextBallotId].isChoiceAddable = true;\\r\\n\\r\\n      }\\r\\n    \\r\\n\\r\\n      creatorBallotIds[msg.sender].add(nextBallotId);\\r\\n\\r\\n     \\r\\n      emit CreateBallot(nextBallotId ,ballots[nextBallotId].ballotType );\\r\\n\\r\\n      nextBallotId++;\\r\\n    }\\r\\n\\r\\n    function deleteBallot(\\r\\n        uint ballotId\\r\\n    )\\r\\n        onlyRole(CREATOR_ROLE)\\r\\n        external\\r\\n    {\\r\\n        require(ballots[ballotId].owner == msg.sender, 'only owner can delete ballot');\\r\\n\\r\\n        delete ballots[ballotId];\\r\\n        creatorBallotIds[msg.sender].remove(ballotId);\\r\\n\\r\\n    }\\r\\n\\r\\n\\r\\n    function addWhitelistedVoters(\\r\\n        uint ballotId,\\r\\n        address[] calldata _voters\\r\\n    )\\r\\n        onlyRole(CREATOR_ROLE)\\r\\n        external\\r\\n    {\\r\\n        require(ballots[ballotId].isKyc == true, 'only kyc ballot can configure as whitelist');\\r\\n        require(ballots[ballotId].owner == msg.sender, 'only owner can delete ballot');\\r\\n        \\r\\n        for(uint i = 0; i < _voters.length; i++) {\\r\\n            whitelistedvoters[ballotId][_voters[i]] = true;\\r\\n        }\\r\\n\\r\\n    }\\r\\n\\r\\n     function isWhitelisted(\\r\\n        address user,\\r\\n        uint ballotId\\r\\n    )\\r\\n        external\\r\\n        view\\r\\n        returns (bool)\\r\\n    {\\r\\n        return\\r\\n            whitelistedvoters[ballotId][user];\\r\\n    }\\r\\n\\r\\n    function vote(\\r\\n        uint ballotId,\\r\\n        uint choiceId\\r\\n    )\\r\\n        external\\r\\n    {\\r\\n        if (ballots[ballotId].isKyc) {\\r\\n            require(whitelistedvoters[ballotId][msg.sender] == true, 'only whitelisted voters can vote');\\r\\n        } \\r\\n\\r\\n        require(votes[msg.sender][ballotId] == false, 'voter can only vote once for a ballot');\\r\\n        require(block.timestamp < ballots[ballotId].end && block.timestamp > ballots[ballotId].start, 'can only vote until ballot end date');\\r\\n        votes[msg.sender][ballotId] = true;\\r\\n        ballots[ballotId].choices[choiceId].votes++;\\r\\n    }\\r\\n\\r\\n    function addChoice(\\r\\n        uint ballotId,\\r\\n        string memory choice\\r\\n    )\\r\\n        external\\r\\n    {\\r\\n\\r\\n        if (ballots[ballotId].isKyc) {\\r\\n            require(whitelistedvoters[ballotId][msg.sender] == true, 'only whitelisted voters can add');\\r\\n        } \\r\\n\\r\\n        require(ballots[ballotId].isChoiceAddable == true, 'only ballot with choice addable can configured');\\r\\n        require(addchoices[msg.sender][ballotId] == false, 'voter can only add choice once for a ballot');\\r\\n        require(block.timestamp < ballots[ballotId].end && block.timestamp > ballots[ballotId].start, 'can only vote until ballot end date');\\r\\n\\r\\n        uint256 nextChoiceId = getChoicesLength(ballotId);\\r\\n\\r\\n        addchoices[msg.sender][ballotId] = true;\\r\\n\\r\\n        ballots[ballotId].choices.push(Choice(nextChoiceId, choice, 1));\\r\\n\\r\\n    }\\r\\n\\r\\n    function results(\\r\\n        uint ballotId\\r\\n    ) \\r\\n        view \\r\\n        external \\r\\n        returns(Choice[] memory)\\r\\n    {\\r\\n        //require(block.timestamp >= ballots[ballotId].end, 'cannot see the ballot result before ballot end');\\r\\n        return ballots[ballotId].choices;\\r\\n    }\\r\\n\\r\\n    function getCreatorBallotIds()\\r\\n        external\\r\\n        view\\r\\n        returns (uint256[] memory)\\r\\n    {\\r\\n        return\\r\\n            creatorBallotIds[msg.sender].values();\\r\\n    }\\r\\n\\r\\n    function getBallotIdsByAddress(\\r\\n        address creator\\r\\n    )\\r\\n        external\\r\\n        view\\r\\n        returns (uint256[] memory)\\r\\n    {\\r\\n        return\\r\\n            creatorBallotIds[creator].values();\\r\\n    }\\r\\n\\r\\n    function getChoicesLength(\\r\\n        uint ballotId\\r\\n    )\\r\\n        internal\\r\\n        view\\r\\n        returns (uint256)\\r\\n    {\\r\\n        return ballots[ballotId].choices.length;\\r\\n    }\\r\\n  \\r\\n\\r\\n}\",\"keccak256\":\"0x567c7b9466e920cd53e864348f6c7baaae054c0184d48a9dfc3a9854a2796925\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/access/AccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n// OpenZeppelin Contracts v4.4.1 (access/AccessControl.sol)\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./IAccessControl.sol\\\";\\r\\nimport \\\"../utils/Context.sol\\\";\\r\\nimport \\\"../utils/Strings.sol\\\";\\r\\nimport \\\"../utils/introspection/ERC165.sol\\\";\\r\\n\\r\\n/**\\r\\n * @dev Contract module that allows children to implement role-based access\\r\\n * control mechanisms. This is a lightweight version that doesn't allow enumerating role\\r\\n * members except through off-chain means by accessing the contract event logs. Some\\r\\n * applications may benefit from on-chain enumerability, for those cases see\\r\\n * {AccessControlEnumerable}.\\r\\n *\\r\\n * Roles are referred to by their `bytes32` identifier. These should be exposed\\r\\n * in the external API and be unique. The best way to achieve this is by\\r\\n * using `public constant` hash digests:\\r\\n *\\r\\n * ```\\r\\n * bytes32 public constant MY_ROLE = keccak256(\\\"MY_ROLE\\\");\\r\\n * ```\\r\\n *\\r\\n * Roles can be used to represent a set of permissions. To restrict access to a\\r\\n * function call, use {hasRole}:\\r\\n *\\r\\n * ```\\r\\n * function foo() public {\\r\\n *     require(hasRole(MY_ROLE, msg.sender));\\r\\n *     ...\\r\\n * }\\r\\n * ```\\r\\n *\\r\\n * Roles can be granted and revoked dynamically via the {grantRole} and\\r\\n * {revokeRole} functions. Each role has an associated admin role, and only\\r\\n * accounts that have a role's admin role can call {grantRole} and {revokeRole}.\\r\\n *\\r\\n * By default, the admin role for all roles is `DEFAULT_ADMIN_ROLE`, which means\\r\\n * that only accounts with this role will be able to grant or revoke other\\r\\n * roles. More complex role relationships can be created by using\\r\\n * {_setRoleAdmin}.\\r\\n *\\r\\n * WARNING: The `DEFAULT_ADMIN_ROLE` is also its own admin: it has permission to\\r\\n * grant and revoke this role. Extra precautions should be taken to secure\\r\\n * accounts that have been granted it.\\r\\n */\\r\\nabstract contract AccessControl is Context, IAccessControl, ERC165 {\\r\\n    struct RoleData {\\r\\n        mapping(address => bool) members;\\r\\n        bytes32 adminRole;\\r\\n    }\\r\\n\\r\\n    mapping(bytes32 => RoleData) private _roles;\\r\\n\\r\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\r\\n\\r\\n    /**\\r\\n     * @dev Modifier that checks that an account has a specific role. Reverts\\r\\n     * with a standardized message including the required role.\\r\\n     *\\r\\n     * The format of the revert reason is given by the following regular expression:\\r\\n     *\\r\\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\\r\\n     *\\r\\n     * _Available since v4.1._\\r\\n     */\\r\\n    modifier onlyRole(bytes32 role) {\\r\\n        _checkRole(role, _msgSender());\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev See {IERC165-supportsInterface}.\\r\\n     */\\r\\n    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\r\\n        return interfaceId == type(IAccessControl).interfaceId || super.supportsInterface(interfaceId);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns `true` if `account` has been granted `role`.\\r\\n     */\\r\\n    function hasRole(bytes32 role, address account) public view override returns (bool) {\\r\\n        return _roles[role].members[account];\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Revert with a standard message if `account` is missing `role`.\\r\\n     *\\r\\n     * The format of the revert reason is given by the following regular expression:\\r\\n     *\\r\\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\\r\\n     */\\r\\n    function _checkRole(bytes32 role, address account) internal view {\\r\\n        if (!hasRole(role, account)) {\\r\\n            revert(\\r\\n                string(\\r\\n                    abi.encodePacked(\\r\\n                        \\\"AccessControl: account \\\",\\r\\n                        Strings.toHexString(uint160(account), 20),\\r\\n                        \\\" is missing role \\\",\\r\\n                        Strings.toHexString(uint256(role), 32)\\r\\n                    )\\r\\n                )\\r\\n            );\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\\r\\n     * {revokeRole}.\\r\\n     *\\r\\n     * To change a role's admin, use {_setRoleAdmin}.\\r\\n     */\\r\\n    function getRoleAdmin(bytes32 role) public view override returns (bytes32) {\\r\\n        return _roles[role].adminRole;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Grants `role` to `account`.\\r\\n     *\\r\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\r\\n     * event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - the caller must have ``role``'s admin role.\\r\\n     */\\r\\n    function grantRole(bytes32 role, address account) public virtual override onlyRole(getRoleAdmin(role)) {\\r\\n        _grantRole(role, account);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Revokes `role` from `account`.\\r\\n     *\\r\\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - the caller must have ``role``'s admin role.\\r\\n     */\\r\\n    function revokeRole(bytes32 role, address account) public virtual override onlyRole(getRoleAdmin(role)) {\\r\\n        _revokeRole(role, account);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Revokes `role` from the calling account.\\r\\n     *\\r\\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\\r\\n     * purpose is to provide a mechanism for accounts to lose their privileges\\r\\n     * if they are compromised (such as when a trusted device is misplaced).\\r\\n     *\\r\\n     * If the calling account had been revoked `role`, emits a {RoleRevoked}\\r\\n     * event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - the caller must be `account`.\\r\\n     */\\r\\n    function renounceRole(bytes32 role, address account) public virtual override {\\r\\n        require(account == _msgSender(), \\\"AccessControl: can only renounce roles for self\\\");\\r\\n\\r\\n        _revokeRole(role, account);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Grants `role` to `account`.\\r\\n     *\\r\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\r\\n     * event. Note that unlike {grantRole}, this function doesn't perform any\\r\\n     * checks on the calling account.\\r\\n     *\\r\\n     * [WARNING]\\r\\n     * ====\\r\\n     * This function should only be called from the constructor when setting\\r\\n     * up the initial roles for the system.\\r\\n     *\\r\\n     * Using this function in any other way is effectively circumventing the admin\\r\\n     * system imposed by {AccessControl}.\\r\\n     * ====\\r\\n     *\\r\\n     * NOTE: This function is deprecated in favor of {_grantRole}.\\r\\n     */\\r\\n    function _setupRole(bytes32 role, address account) internal virtual {\\r\\n        _grantRole(role, account);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Sets `adminRole` as ``role``'s admin role.\\r\\n     *\\r\\n     * Emits a {RoleAdminChanged} event.\\r\\n     */\\r\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual {\\r\\n        bytes32 previousAdminRole = getRoleAdmin(role);\\r\\n        _roles[role].adminRole = adminRole;\\r\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Grants `role` to `account`.\\r\\n     *\\r\\n     * Internal function without access restriction.\\r\\n     */\\r\\n    function _grantRole(bytes32 role, address account) internal virtual {\\r\\n        if (!hasRole(role, account)) {\\r\\n            _roles[role].members[account] = true;\\r\\n            emit RoleGranted(role, account, _msgSender());\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Revokes `role` from `account`.\\r\\n     *\\r\\n     * Internal function without access restriction.\\r\\n     */\\r\\n    function _revokeRole(bytes32 role, address account) internal virtual {\\r\\n        if (hasRole(role, account)) {\\r\\n            _roles[role].members[account] = false;\\r\\n            emit RoleRevoked(role, account, _msgSender());\\r\\n        }\\r\\n    }\\r\\n}\",\"keccak256\":\"0x75763f397eef33f960f7df8b6617b9f6d50f2755821a351d834f2bd13aeb091e\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/access/AccessControlEnumerable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n// OpenZeppelin Contracts v4.4.1 (access/AccessControlEnumerable.sol)\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./IAccessControlEnumerable.sol\\\";\\r\\nimport \\\"./AccessControl.sol\\\";\\r\\nimport \\\"../utils/structs/EnumerableSet.sol\\\";\\r\\n\\r\\n/**\\r\\n * @dev Extension of {AccessControl} that allows enumerating the members of each role.\\r\\n */\\r\\nabstract contract AccessControlEnumerable is IAccessControlEnumerable, AccessControl {\\r\\n    using EnumerableSet for EnumerableSet.AddressSet;\\r\\n\\r\\n    mapping(bytes32 => EnumerableSet.AddressSet) private _roleMembers;\\r\\n\\r\\n    /**\\r\\n     * @dev See {IERC165-supportsInterface}.\\r\\n     */\\r\\n    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\r\\n        return interfaceId == type(IAccessControlEnumerable).interfaceId || super.supportsInterface(interfaceId);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns one of the accounts that have `role`. `index` must be a\\r\\n     * value between 0 and {getRoleMemberCount}, non-inclusive.\\r\\n     *\\r\\n     * Role bearers are not sorted in any particular way, and their ordering may\\r\\n     * change at any point.\\r\\n     *\\r\\n     * WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure\\r\\n     * you perform all queries on the same block. See the following\\r\\n     * https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post]\\r\\n     * for more information.\\r\\n     */\\r\\n    function getRoleMember(bytes32 role, uint256 index) public view override returns (address) {\\r\\n        return _roleMembers[role].at(index);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the number of accounts that have `role`. Can be used\\r\\n     * together with {getRoleMember} to enumerate all bearers of a role.\\r\\n     */\\r\\n    function getRoleMemberCount(bytes32 role) public view override returns (uint256) {\\r\\n        return _roleMembers[role].length();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Overload {_grantRole} to track enumerable memberships\\r\\n     */\\r\\n    function _grantRole(bytes32 role, address account) internal virtual override {\\r\\n        super._grantRole(role, account);\\r\\n        _roleMembers[role].add(account);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Overload {_revokeRole} to track enumerable memberships\\r\\n     */\\r\\n    function _revokeRole(bytes32 role, address account) internal virtual override {\\r\\n        super._revokeRole(role, account);\\r\\n        _roleMembers[role].remove(account);\\r\\n    }\\r\\n}\",\"keccak256\":\"0x98b039ab59fc6a9640689d1a63292ec6a5cf07893ea2ca0924a7074a0390ca51\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/access/IAccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n// OpenZeppelin Contracts v4.4.1 (access/IAccessControl.sol)\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @dev External interface of AccessControl declared to support ERC165 detection.\\r\\n */\\r\\ninterface IAccessControl {\\r\\n    /**\\r\\n     * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`\\r\\n     *\\r\\n     * `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite\\r\\n     * {RoleAdminChanged} not being emitted signaling this.\\r\\n     *\\r\\n     * _Available since v3.1._\\r\\n     */\\r\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\r\\n\\r\\n    /**\\r\\n     * @dev Emitted when `account` is granted `role`.\\r\\n     *\\r\\n     * `sender` is the account that originated the contract call, an admin role\\r\\n     * bearer except when using {AccessControl-_setupRole}.\\r\\n     */\\r\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\r\\n\\r\\n    /**\\r\\n     * @dev Emitted when `account` is revoked `role`.\\r\\n     *\\r\\n     * `sender` is the account that originated the contract call:\\r\\n     *   - if using `revokeRole`, it is the admin role bearer\\r\\n     *   - if using `renounceRole`, it is the role bearer (i.e. `account`)\\r\\n     */\\r\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns `true` if `account` has been granted `role`.\\r\\n     */\\r\\n    function hasRole(bytes32 role, address account) external view returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\\r\\n     * {revokeRole}.\\r\\n     *\\r\\n     * To change a role's admin, use {AccessControl-_setRoleAdmin}.\\r\\n     */\\r\\n    function getRoleAdmin(bytes32 role) external view returns (bytes32);\\r\\n\\r\\n    /**\\r\\n     * @dev Grants `role` to `account`.\\r\\n     *\\r\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\r\\n     * event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - the caller must have ``role``'s admin role.\\r\\n     */\\r\\n    function grantRole(bytes32 role, address account) external;\\r\\n\\r\\n    /**\\r\\n     * @dev Revokes `role` from `account`.\\r\\n     *\\r\\n     * If `account` had been granted `role`, emits a {RoleRevoked} event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - the caller must have ``role``'s admin role.\\r\\n     */\\r\\n    function revokeRole(bytes32 role, address account) external;\\r\\n\\r\\n    /**\\r\\n     * @dev Revokes `role` from the calling account.\\r\\n     *\\r\\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\\r\\n     * purpose is to provide a mechanism for accounts to lose their privileges\\r\\n     * if they are compromised (such as when a trusted device is misplaced).\\r\\n     *\\r\\n     * If the calling account had been granted `role`, emits a {RoleRevoked}\\r\\n     * event.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - the caller must be `account`.\\r\\n     */\\r\\n    function renounceRole(bytes32 role, address account) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x0b56404e790f707db5050025dc791c21b785797824efaaf28e6613444408ac0b\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/access/IAccessControlEnumerable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n// OpenZeppelin Contracts v4.4.1 (access/IAccessControlEnumerable.sol)\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./IAccessControl.sol\\\";\\r\\n\\r\\n/**\\r\\n * @dev External interface of AccessControlEnumerable declared to support ERC165 detection.\\r\\n */\\r\\ninterface IAccessControlEnumerable is IAccessControl {\\r\\n    /**\\r\\n     * @dev Returns one of the accounts that have `role`. `index` must be a\\r\\n     * value between 0 and {getRoleMemberCount}, non-inclusive.\\r\\n     *\\r\\n     * Role bearers are not sorted in any particular way, and their ordering may\\r\\n     * change at any point.\\r\\n     *\\r\\n     * WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure\\r\\n     * you perform all queries on the same block. See the following\\r\\n     * https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post]\\r\\n     * for more information.\\r\\n     */\\r\\n    function getRoleMember(bytes32 role, uint256 index) external view returns (address);\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the number of accounts that have `role`. Can be used\\r\\n     * together with {getRoleMember} to enumerate all bearers of a role.\\r\\n     */\\r\\n    function getRoleMemberCount(bytes32 role) external view returns (uint256);\\r\\n}\",\"keccak256\":\"0x47745ab4dfa1124f45b3afaa8573b4f5845ba425829a9f8d350bd1ba1350b82e\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @dev Provides information about the current execution context, including the\\r\\n * sender of the transaction and its data. While these are generally available\\r\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\r\\n * manner, since when dealing with meta-transactions the account sending and\\r\\n * paying for execution may not be the actual sender (as far as an application\\r\\n * is concerned).\\r\\n *\\r\\n * This contract is only required for intermediate, library-like contracts.\\r\\n */\\r\\nabstract contract Context {\\r\\n    function _msgSender() internal view virtual returns (address) {\\r\\n        return msg.sender;\\r\\n    }\\r\\n\\r\\n    function _msgData() internal view virtual returns (bytes calldata) {\\r\\n        return msg.data;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x2e2ac762cc60af55c199a4926f4c360aa00cec4af6dfed7475fc866353ea6c58\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @dev String operations.\\r\\n */\\r\\nlibrary Strings {\\r\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\r\\n\\r\\n    /**\\r\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\r\\n     */\\r\\n    function toString(uint256 value) internal pure returns (string memory) {\\r\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\r\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\r\\n\\r\\n        if (value == 0) {\\r\\n            return \\\"0\\\";\\r\\n        }\\r\\n        uint256 temp = value;\\r\\n        uint256 digits;\\r\\n        while (temp != 0) {\\r\\n            digits++;\\r\\n            temp /= 10;\\r\\n        }\\r\\n        bytes memory buffer = new bytes(digits);\\r\\n        while (value != 0) {\\r\\n            digits -= 1;\\r\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\r\\n            value /= 10;\\r\\n        }\\r\\n        return string(buffer);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\r\\n     */\\r\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\r\\n        if (value == 0) {\\r\\n            return \\\"0x00\\\";\\r\\n        }\\r\\n        uint256 temp = value;\\r\\n        uint256 length = 0;\\r\\n        while (temp != 0) {\\r\\n            length++;\\r\\n            temp >>= 8;\\r\\n        }\\r\\n        return toHexString(value, length);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\r\\n     */\\r\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\r\\n        bytes memory buffer = new bytes(2 * length + 2);\\r\\n        buffer[0] = \\\"0\\\";\\r\\n        buffer[1] = \\\"x\\\";\\r\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\r\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\r\\n            value >>= 4;\\r\\n        }\\r\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\r\\n        return string(buffer);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xd2f5a48a2733d28b75fe2e72d2d529daedd929a15fa7352d9ac20f6cd3e669fb\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/utils/introspection/ERC165.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./IERC165.sol\\\";\\r\\n\\r\\n/**\\r\\n * @dev Implementation of the {IERC165} interface.\\r\\n *\\r\\n * Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check\\r\\n * for the additional interface id that will be supported. For example:\\r\\n *\\r\\n * ```solidity\\r\\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\r\\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\\r\\n * }\\r\\n * ```\\r\\n *\\r\\n * Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.\\r\\n */\\r\\nabstract contract ERC165 is IERC165 {\\r\\n    /**\\r\\n     * @dev See {IERC165-supportsInterface}.\\r\\n     */\\r\\n    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\\r\\n        return interfaceId == type(IERC165).interfaceId;\\r\\n    }\\r\\n}\",\"keccak256\":\"0x6daeb7a509fb10e5e8a52e1f2bbcf749ada25fc50deccfc82cbabeccc2bd644e\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/utils/introspection/IERC165.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @dev Interface of the ERC165 standard, as defined in the\\r\\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\\r\\n *\\r\\n * Implementers can declare support of contract interfaces, which can then be\\r\\n * queried by others ({ERC165Checker}).\\r\\n *\\r\\n * For an implementation, see {ERC165}.\\r\\n */\\r\\ninterface IERC165 {\\r\\n    /**\\r\\n     * @dev Returns true if this contract implements the interface defined by\\r\\n     * `interfaceId`. See the corresponding\\r\\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\\r\\n     * to learn more about how these ids are created.\\r\\n     *\\r\\n     * This function call must use less than 30 000 gas.\\r\\n     */\\r\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\r\\n}\",\"keccak256\":\"0xfc0296945555d45d710d7a0ab5cf09b90541ebbf92685780c70a6607d10e784a\",\"license\":\"MIT\"},\"contracts/openzeppelin/v4/utils/structs/EnumerableSet.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @dev Library for managing\\r\\n * https://en.wikipedia.org/wiki/Set_(abstract_data_type)[sets] of primitive\\r\\n * types.\\r\\n *\\r\\n * Sets have the following properties:\\r\\n *\\r\\n * - Elements are added, removed, and checked for existence in constant time\\r\\n * (O(1)).\\r\\n * - Elements are enumerated in O(n). No guarantees are made on the ordering.\\r\\n *\\r\\n * ```\\r\\n * contract Example {\\r\\n *     // Add the library methods\\r\\n *     using EnumerableSet for EnumerableSet.AddressSet;\\r\\n *\\r\\n *     // Declare a set state variable\\r\\n *     EnumerableSet.AddressSet private mySet;\\r\\n * }\\r\\n * ```\\r\\n *\\r\\n * As of v3.3.0, sets of type `bytes32` (`Bytes32Set`), `address` (`AddressSet`)\\r\\n * and `uint256` (`UintSet`) are supported.\\r\\n */\\r\\nlibrary EnumerableSet {\\r\\n    // To implement this library for multiple types with as little code\\r\\n    // repetition as possible, we write it in terms of a generic Set type with\\r\\n    // bytes32 values.\\r\\n    // The Set implementation uses private functions, and user-facing\\r\\n    // implementations (such as AddressSet) are just wrappers around the\\r\\n    // underlying Set.\\r\\n    // This means that we can only create new EnumerableSets for types that fit\\r\\n    // in bytes32.\\r\\n\\r\\n    struct Set {\\r\\n        // Storage of set values\\r\\n        bytes32[] _values;\\r\\n        // Position of the value in the `values` array, plus 1 because index 0\\r\\n        // means a value is not in the set.\\r\\n        mapping(bytes32 => uint256) _indexes;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Add a value to a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was added to the set, that is if it was not\\r\\n     * already present.\\r\\n     */\\r\\n    function _add(Set storage set, bytes32 value) private returns (bool) {\\r\\n        if (!_contains(set, value)) {\\r\\n            set._values.push(value);\\r\\n            // The value is stored at length-1, but we add 1 to all indexes\\r\\n            // and use 0 as a sentinel value\\r\\n            set._indexes[value] = set._values.length;\\r\\n            return true;\\r\\n        } else {\\r\\n            return false;\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Removes a value from a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was removed from the set, that is if it was\\r\\n     * present.\\r\\n     */\\r\\n    function _remove(Set storage set, bytes32 value) private returns (bool) {\\r\\n        // We read and store the value's index to prevent multiple reads from the same storage slot\\r\\n        uint256 valueIndex = set._indexes[value];\\r\\n\\r\\n        if (valueIndex != 0) {\\r\\n            // Equivalent to contains(set, value)\\r\\n            // To delete an element from the _values array in O(1), we swap the element to delete with the last one in\\r\\n            // the array, and then remove the last element (sometimes called as 'swap and pop').\\r\\n            // This modifies the order of the array, as noted in {at}.\\r\\n\\r\\n            uint256 toDeleteIndex = valueIndex - 1;\\r\\n            uint256 lastIndex = set._values.length - 1;\\r\\n\\r\\n            if (lastIndex != toDeleteIndex) {\\r\\n                bytes32 lastvalue = set._values[lastIndex];\\r\\n\\r\\n                // Move the last value to the index where the value to delete is\\r\\n                set._values[toDeleteIndex] = lastvalue;\\r\\n                // Update the index for the moved value\\r\\n                set._indexes[lastvalue] = valueIndex; // Replace lastvalue's index to valueIndex\\r\\n            }\\r\\n\\r\\n            // Delete the slot where the moved value was stored\\r\\n            set._values.pop();\\r\\n\\r\\n            // Delete the index for the deleted slot\\r\\n            delete set._indexes[value];\\r\\n\\r\\n            return true;\\r\\n        } else {\\r\\n            return false;\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns true if the value is in the set. O(1).\\r\\n     */\\r\\n    function _contains(Set storage set, bytes32 value) private view returns (bool) {\\r\\n        return set._indexes[value] != 0;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the number of values on the set. O(1).\\r\\n     */\\r\\n    function _length(Set storage set) private view returns (uint256) {\\r\\n        return set._values.length;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\r\\n     *\\r\\n     * Note that there are no guarantees on the ordering of values inside the\\r\\n     * array, and it may change when more values are added or removed.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - `index` must be strictly less than {length}.\\r\\n     */\\r\\n    function _at(Set storage set, uint256 index) private view returns (bytes32) {\\r\\n        return set._values[index];\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Return the entire set in an array\\r\\n     *\\r\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\r\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\r\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\r\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\r\\n     */\\r\\n    function _values(Set storage set) private view returns (bytes32[] memory) {\\r\\n        return set._values;\\r\\n    }\\r\\n\\r\\n    // Bytes32Set\\r\\n\\r\\n    struct Bytes32Set {\\r\\n        Set _inner;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Add a value to a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was added to the set, that is if it was not\\r\\n     * already present.\\r\\n     */\\r\\n    function add(Bytes32Set storage set, bytes32 value) internal returns (bool) {\\r\\n        return _add(set._inner, value);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Removes a value from a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was removed from the set, that is if it was\\r\\n     * present.\\r\\n     */\\r\\n    function remove(Bytes32Set storage set, bytes32 value) internal returns (bool) {\\r\\n        return _remove(set._inner, value);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns true if the value is in the set. O(1).\\r\\n     */\\r\\n    function contains(Bytes32Set storage set, bytes32 value) internal view returns (bool) {\\r\\n        return _contains(set._inner, value);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the number of values in the set. O(1).\\r\\n     */\\r\\n    function length(Bytes32Set storage set) internal view returns (uint256) {\\r\\n        return _length(set._inner);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\r\\n     *\\r\\n     * Note that there are no guarantees on the ordering of values inside the\\r\\n     * array, and it may change when more values are added or removed.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - `index` must be strictly less than {length}.\\r\\n     */\\r\\n    function at(Bytes32Set storage set, uint256 index) internal view returns (bytes32) {\\r\\n        return _at(set._inner, index);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Return the entire set in an array\\r\\n     *\\r\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\r\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\r\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\r\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\r\\n     */\\r\\n    function values(Bytes32Set storage set) internal view returns (bytes32[] memory) {\\r\\n        return _values(set._inner);\\r\\n    }\\r\\n\\r\\n    // AddressSet\\r\\n\\r\\n    struct AddressSet {\\r\\n        Set _inner;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Add a value to a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was added to the set, that is if it was not\\r\\n     * already present.\\r\\n     */\\r\\n    function add(AddressSet storage set, address value) internal returns (bool) {\\r\\n        return _add(set._inner, bytes32(uint256(uint160(value))));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Removes a value from a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was removed from the set, that is if it was\\r\\n     * present.\\r\\n     */\\r\\n    function remove(AddressSet storage set, address value) internal returns (bool) {\\r\\n        return _remove(set._inner, bytes32(uint256(uint160(value))));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns true if the value is in the set. O(1).\\r\\n     */\\r\\n    function contains(AddressSet storage set, address value) internal view returns (bool) {\\r\\n        return _contains(set._inner, bytes32(uint256(uint160(value))));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the number of values in the set. O(1).\\r\\n     */\\r\\n    function length(AddressSet storage set) internal view returns (uint256) {\\r\\n        return _length(set._inner);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\r\\n     *\\r\\n     * Note that there are no guarantees on the ordering of values inside the\\r\\n     * array, and it may change when more values are added or removed.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - `index` must be strictly less than {length}.\\r\\n     */\\r\\n    function at(AddressSet storage set, uint256 index) internal view returns (address) {\\r\\n        return address(uint160(uint256(_at(set._inner, index))));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Return the entire set in an array\\r\\n     *\\r\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\r\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\r\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\r\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\r\\n     */\\r\\n    function values(AddressSet storage set) internal view returns (address[] memory) {\\r\\n        bytes32[] memory store = _values(set._inner);\\r\\n        address[] memory result;\\r\\n\\r\\n        assembly {\\r\\n            result := store\\r\\n        }\\r\\n\\r\\n        return result;\\r\\n    }\\r\\n\\r\\n    // UintSet\\r\\n\\r\\n    struct UintSet {\\r\\n        Set _inner;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Add a value to a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was added to the set, that is if it was not\\r\\n     * already present.\\r\\n     */\\r\\n    function add(UintSet storage set, uint256 value) internal returns (bool) {\\r\\n        return _add(set._inner, bytes32(value));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Removes a value from a set. O(1).\\r\\n     *\\r\\n     * Returns true if the value was removed from the set, that is if it was\\r\\n     * present.\\r\\n     */\\r\\n    function remove(UintSet storage set, uint256 value) internal returns (bool) {\\r\\n        return _remove(set._inner, bytes32(value));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns true if the value is in the set. O(1).\\r\\n     */\\r\\n    function contains(UintSet storage set, uint256 value) internal view returns (bool) {\\r\\n        return _contains(set._inner, bytes32(value));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the number of values on the set. O(1).\\r\\n     */\\r\\n    function length(UintSet storage set) internal view returns (uint256) {\\r\\n        return _length(set._inner);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\r\\n     *\\r\\n     * Note that there are no guarantees on the ordering of values inside the\\r\\n     * array, and it may change when more values are added or removed.\\r\\n     *\\r\\n     * Requirements:\\r\\n     *\\r\\n     * - `index` must be strictly less than {length}.\\r\\n     */\\r\\n    function at(UintSet storage set, uint256 index) internal view returns (uint256) {\\r\\n        return uint256(_at(set._inner, index));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Return the entire set in an array\\r\\n     *\\r\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\r\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\r\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\r\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\r\\n     */\\r\\n    function values(UintSet storage set) internal view returns (uint256[] memory) {\\r\\n        bytes32[] memory store = _values(set._inner);\\r\\n        uint256[] memory result;\\r\\n\\r\\n        assembly {\\r\\n            result := store\\r\\n        }\\r\\n\\r\\n        return result;\\r\\n    }\\r\\n}\",\"keccak256\":\"0xb5d9d145978c5e56644335b68131f2907415a8af195f23ccc8f623dc7db62ce3\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b506200001f60003362000051565b6200004b7f828634d95e775031b9ff576b159a8509d3053581a8c9c4d7d86899e0afcd882f3362000051565b620001a7565b6200006882826200009460201b620011f41760201c565b60008281526001602090815260409091206200008f9183906200127862000135821b17901c565b505050565b6000828152602081815260408083206001600160a01b038516845290915290205460ff1662000131576000828152602081815260408083206001600160a01b03851684529091529020805460ff19166001179055620000f03390565b6001600160a01b0316816001600160a01b0316837f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d60405160405180910390a45b5050565b60006200014c836001600160a01b03841662000155565b90505b92915050565b60008181526001830160205260408120546200019e575081546001818101845560008481526020808220909301849055845484825282860190935260409020919091556200014f565b5060006200014f565b611f8780620001b76000396000f3fe608060405234801561001057600080fd5b50600436106101425760003560e01c80638aeda25a116100b8578063b36c5da71161007c578063b36c5da71461031e578063b384abef1461034c578063ca15c8731461035f578063d4d2d91c14610372578063d547741f14610385578063eb1333521461039857600080fd5b80638aeda25a146102955780639010d07c146102aa57806391d14854146102d55780639f2524ee146102e8578063a217fddf1461031657600080fd5b806336568abe1161010a57806336568abe146101ea57806348760d16146101fd5780635c632b38146102105780636f499b881461023757806378935cd21461024a578063830639ac1461025d57600080fd5b806301ffc9a714610147578063157600011461016f5780631b0c27da14610184578063248a9ca3146101a45780632f2ff15d146101d5575b600080fd5b61015a610155366004611a3d565b6103ab565b60405190151581526020015b60405180910390f35b6101776103d6565b6040516101669190611cb7565b6101976101923660046119d6565b6103f6565b6040516101669190611c36565b6101c76101b23660046119d6565b60009081526020819052604090206001015490565b604051908152602001610166565b6101e86101e33660046119ef565b610511565b005b6101e86101f83660046119ef565b61053c565b6101e861020b366004611b02565b6105bf565b61022361021e3660046119d6565b610747565b604051610166989796959493929190611d51565b610177610245366004611991565b610824565b6101e86102583660046119d6565b610848565b61015a61026b3660046119ac565b60009081526003602090815260408083206001600160a01b03949094168352929052205460ff1690565b6101c7600080516020611f3283398151915281565b6102bd6102b8366004611a1b565b610939565b6040516001600160a01b039091168152602001610166565b61015a6102e33660046119ef565b610958565b61015a6102f63660046119ac565b600460209081526000928352604080842090915290825290205460ff1681565b6101c7600081565b61015a61032c3660046119ac565b600560209081526000928352604080842090915290825290205460ff1681565b6101e861035a366004611a1b565b610981565b6101c761036d3660046119d6565b610b3e565b6101e8610380366004611b4e565b610b55565b6101e86103933660046119ef565b610dcb565b6101e86103a6366004611a67565b610df1565b60006001600160e01b03198216635a05180f60e01b14806103d057506103d08261128d565b92915050565b3360009081526007602052604090206060906103f1906112c2565b905090565b606060026000838152602001908152602001600020600301805480602002602001604051908101604052809291908181526020016000905b8282101561050657838290600052602060002090600302016040518060600160405290816000820154815260200160018201805461046b90611e83565b80601f016020809104026020016040519081016040528092919081815260200182805461049790611e83565b80156104e45780601f106104b9576101008083540402835291602001916104e4565b820191906000526020600020905b8154815290600101906020018083116104c757829003601f168201915b505050505081526020016002820154815250508152602001906001019061042e565b505050509050919050565b60008281526020819052604090206001015461052d81336112cf565b6105378383611333565b505050565b6001600160a01b03811633146105b15760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b6105bb8282611355565b5050565b600080516020611f328339815191526105d881336112cf565b60008481526002602081905260409091200154600160a01b900460ff1615156001146106595760405162461bcd60e51b815260206004820152602a60248201527f6f6e6c79206b79632062616c6c6f742063616e20636f6e666967757265206173604482015269081dda1a5d195b1a5cdd60b21b60648201526084016105a8565b600084815260026020819052604090912001546001600160a01b031633146106c35760405162461bcd60e51b815260206004820152601c60248201527f6f6e6c79206f776e65722063616e2064656c6574652062616c6c6f740000000060448201526064016105a8565b60005b828110156107405760008581526003602052604081206001918686858181106106f1576106f1611f05565b90506020020160208101906107069190611991565b6001600160a01b031681526020810191909152604001600020805460ff19169115159190911790558061073881611ebe565b9150506106c6565b5050505050565b6002602052600090815260409020805460018201805491929161076990611e83565b80601f016020809104026020016040519081016040528092919081815260200182805461079590611e83565b80156107e25780601f106107b7576101008083540402835291602001916107e2565b820191906000526020600020905b8154815290600101906020018083116107c557829003601f168201915b5050505060028301546004840154600585015460069095015493946001600160a01b0383169460ff600160a01b850481169550600160a81b9094049093169288565b6001600160a01b03811660009081526007602052604090206060906103d0906112c2565b600080516020611f3283398151915261086181336112cf565b600082815260026020819052604090912001546001600160a01b031633146108cb5760405162461bcd60e51b815260206004820152601c60248201527f6f6e6c79206f776e65722063616e2064656c6574652062616c6c6f740000000060448201526064016105a8565b6000828152600260205260408120818155906108ea600183018261177b565b6002820180546001600160b01b031916905561090a6003830160006117b8565b506000600482018190556005820181905560069091018190553381526007602052604090206105379083611377565b60008281526001602052604081206109519083611383565b9392505050565b6000918252602082815260408084206001600160a01b0393909316845291905290205460ff1690565b60008281526002602081905260409091200154600160a01b900460ff1615610a1157600082815260036020908152604080832033845290915290205460ff161515600114610a115760405162461bcd60e51b815260206004820181905260248201527f6f6e6c792077686974656c697374656420766f746572732063616e20766f746560448201526064016105a8565b33600090815260046020908152604080832085845290915290205460ff1615610a8a5760405162461bcd60e51b815260206004820152602560248201527f766f7465722063616e206f6e6c7920766f7465206f6e636520666f7220612062604482015264185b1b1bdd60da1b60648201526084016105a8565b60008281526002602052604090206005015442108015610aba575060008281526002602052604090206004015442115b610ad65760405162461bcd60e51b81526004016105a890611d0e565b3360009081526004602090815260408083208584528252808320805460ff1916600117905560029091529020600301805482908110610b1757610b17611f05565b600091825260208220600260039092020101805491610b3583611ebe565b91905055505050565b60008181526001602052604081206103d09061138f565b60008281526002602081905260409091200154600160a01b900460ff1615610be557600082815260036020908152604080832033845290915290205460ff161515600114610be55760405162461bcd60e51b815260206004820152601f60248201527f6f6e6c792077686974656c697374656420766f746572732063616e206164640060448201526064016105a8565b60008281526002602081905260409091200154600160a81b900460ff161515600114610c6a5760405162461bcd60e51b815260206004820152602e60248201527f6f6e6c792062616c6c6f7420776974682063686f6963652061646461626c652060448201526d18d85b8818dbdb999a59dd5c995960921b60648201526084016105a8565b33600090815260056020908152604080832085845290915290205460ff1615610ce95760405162461bcd60e51b815260206004820152602b60248201527f766f7465722063616e206f6e6c79206164642063686f696365206f6e6365206660448201526a1bdc88184818985b1b1bdd60aa1b60648201526084016105a8565b60008281526002602052604090206005015442108015610d19575060008281526002602052604090206004015442115b610d355760405162461bcd60e51b81526004016105a890611d0e565b600082815260026020818152604080842060039081018054338752600585528387208988528552838720805460ff1916600190811790915595855283516060810185528181528086018981529481018790528254808801845592885296859020875192909302909201908155915180519195949293610db9938501929101906117d9565b50604082015181600201555050505050565b600082815260208190526040902060010154610de781336112cf565b6105378383611355565b600080516020611f32833981519152610e0a81336112cf565b60065460008181526002602090815260409091209182558951610e3392600101918b01906117d9565b50600680546000908152600260208190526040808320820180546001600160a01b031916331790558354835280832090910180548b1515600160a01b0260ff60a01b199091161790558254825280822083018590559154815220600401849055610e9d8385611dee565b600680546000908152600260205260408082206005019390935581548152919091200154610ff157600654600090815260026020908152604080832081516060810183528481528251808401845260048152635472756560e01b8186015281850190815292810185905260039182018054600181810183559187529585902082519690930290920194855591518051929493610f3f93928501929101906117d9565b50604091820151600291820155600654600090815260209182528281208351606081018552600180825285518087018752600581526446616c736560d81b8187015282860190815295820184905260039283018054808301825590855293859020825194909302909201928355935180519293610fc293928501929101906117d9565b50604091820151600291820155600654600090815260208290529190912001805460ff60a81b19169055611164565b60068054600090815260026020526040902001546001141561111c5760005b8581101561111657600260006006548152602001908152602001600020600301604051806060016040528083815260200189898581811061105357611053611f05565b90506020028101906110659190611da7565b8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201829052509385525050506020918201819052835460018181018655948252908290208351600390920201908155828201518051939491936110da939285019291909101906117d9565b50604091820151600291820155600654600090815260208290529190912001805460ff60a81b191690558061110e81611ebe565b915050611010565b50611164565b600260006006548152602001908152602001600020600601546002141561116457600654600090815260026020819052604090912001805460ff60a81b1916600160a81b1790555b60065433600090815260076020526040902061117f91611399565b5060068054600081815260026020526040908190209092015491517fe3b20ae4b5bc1a82e41373281d0772ca7dd8a5c764fa0251192e374f6f3af7b8926111cd928252602082015260400190565b60405180910390a1600680549060006111e583611ebe565b91905055505050505050505050565b6111fe8282610958565b6105bb576000828152602081815260408083206001600160a01b03851684529091529020805460ff191660011790556112343390565b6001600160a01b0316816001600160a01b0316837f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d60405160405180910390a45050565b6000610951836001600160a01b0384166113a1565b60006001600160e01b03198216637965db0b60e01b14806103d057506301ffc9a760e01b6001600160e01b03198316146103d0565b60606000610951836113f0565b6112d98282610958565b6105bb576112f1816001600160a01b0316601461144c565b6112fc83602061144c565b60405160200161130d929190611bc1565b60408051601f198184030181529082905262461bcd60e51b82526105a891600401611cfb565b61133d82826111f4565b60008281526001602052604090206105379082611278565b61135f82826115e8565b6000828152600160205260409020610537908261164d565b6000610951838361165e565b60006109518383611751565b60006103d0825490565b600061095183835b60008181526001830160205260408120546113e8575081546001818101845560008481526020808220909301849055845484825282860190935260409020919091556103d0565b5060006103d0565b60608160000180548060200260200160405190810160405280929190818152602001828054801561144057602002820191906000526020600020905b81548152602001906001019080831161142c575b50505050509050919050565b6060600061145b836002611e06565b611466906002611dee565b67ffffffffffffffff81111561147e5761147e611f1b565b6040519080825280601f01601f1916602001820160405280156114a8576020820181803683370190505b509050600360fc1b816000815181106114c3576114c3611f05565b60200101906001600160f81b031916908160001a905350600f60fb1b816001815181106114f2576114f2611f05565b60200101906001600160f81b031916908160001a9053506000611516846002611e06565b611521906001611dee565b90505b6001811115611599576f181899199a1a9b1b9c1cb0b131b232b360811b85600f166010811061155557611555611f05565b1a60f81b82828151811061156b5761156b611f05565b60200101906001600160f81b031916908160001a90535060049490941c9361159281611e6c565b9050611524565b5083156109515760405162461bcd60e51b815260206004820181905260248201527f537472696e67733a20686578206c656e67746820696e73756666696369656e7460448201526064016105a8565b6115f28282610958565b156105bb576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b6000610951836001600160a01b0384165b60008181526001830160205260408120548015611747576000611682600183611e25565b855490915060009061169690600190611e25565b90508181146116fb5760008660000182815481106116b6576116b6611f05565b90600052602060002001549050808760000184815481106116d9576116d9611f05565b6000918252602080832090910192909255918252600188019052604090208390555b855486908061170c5761170c611eef565b6001900381819060005260206000200160009055905585600101600086815260200190815260200160002060009055600193505050506103d0565b60009150506103d0565b600082600001828154811061176857611768611f05565b9060005260206000200154905092915050565b50805461178790611e83565b6000825580601f10611797575050565b601f0160209004906000526020600020908101906117b5919061185d565b50565b50805460008255600302906000526020600020908101906117b59190611872565b8280546117e590611e83565b90600052602060002090601f016020900481019282611807576000855561184d565b82601f1061182057805160ff191683800117855561184d565b8280016001018555821561184d579182015b8281111561184d578251825591602001919060010190611832565b5061185992915061185d565b5090565b5b80821115611859576000815560010161185e565b8082111561185957600080825561188c600183018261177b565b5060006002820155600301611872565b80356001600160a01b03811681146118b357600080fd5b919050565b60008083601f8401126118ca57600080fd5b50813567ffffffffffffffff8111156118e257600080fd5b6020830191508360208260051b85010111156118fd57600080fd5b9250929050565b600082601f83011261191557600080fd5b813567ffffffffffffffff8082111561193057611930611f1b565b604051601f8301601f19908116603f0116810190828211818310171561195857611958611f1b565b8160405283815286602085880101111561197157600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000602082840312156119a357600080fd5b6109518261189c565b600080604083850312156119bf57600080fd5b6119c88361189c565b946020939093013593505050565b6000602082840312156119e857600080fd5b5035919050565b60008060408385031215611a0257600080fd5b82359150611a126020840161189c565b90509250929050565b60008060408385031215611a2e57600080fd5b50508035926020909101359150565b600060208284031215611a4f57600080fd5b81356001600160e01b03198116811461095157600080fd5b600080600080600080600060c0888a031215611a8257600080fd5b873567ffffffffffffffff80821115611a9a57600080fd5b611aa68b838c01611904565b985060208a013591508115158214611abd57600080fd5b90965060408901359080821115611ad357600080fd5b50611ae08a828b016118b8565b989b979a50986060810135976080820135975060a09091013595509350505050565b600080600060408486031215611b1757600080fd5b83359250602084013567ffffffffffffffff811115611b3557600080fd5b611b41868287016118b8565b9497909650939450505050565b60008060408385031215611b6157600080fd5b82359150602083013567ffffffffffffffff811115611b7f57600080fd5b611b8b85828601611904565b9150509250929050565b60008151808452611bad816020860160208601611e3c565b601f01601f19169290920160200192915050565b7f416363657373436f6e74726f6c3a206163636f756e7420000000000000000000815260008351611bf9816017850160208801611e3c565b7001034b99036b4b9b9b4b733903937b6329607d1b6017918401918201528351611c2a816028840160208801611e3c565b01602801949350505050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b83811015611ca957603f19898403018552815160608151855288820151818a870152611c8b82870182611b95565b92890151958901959095525094870194925090860190600101611c5d565b509098975050505050505050565b6020808252825182820181905260009190848201906040850190845b81811015611cef57835183529284019291840191600101611cd3565b50909695505050505050565b6020815260006109516020830184611b95565b60208082526023908201527f63616e206f6e6c7920766f746520756e74696c2062616c6c6f7420656e64206460408201526261746560e81b606082015260800190565b60006101008a8352806020840152611d6b8184018b611b95565b6001600160a01b0399909916604084015250509415156060860152921515608085015260a084019190915260c083015260e09091015292915050565b6000808335601e19843603018112611dbe57600080fd5b83018035915067ffffffffffffffff821115611dd957600080fd5b6020019150368190038213156118fd57600080fd5b60008219821115611e0157611e01611ed9565b500190565b6000816000190483118215151615611e2057611e20611ed9565b500290565b600082821015611e3757611e37611ed9565b500390565b60005b83811015611e57578181015183820152602001611e3f565b83811115611e66576000848401525b50505050565b600081611e7b57611e7b611ed9565b506000190190565b600181811c90821680611e9757607f821691505b60208210811415611eb857634e487b7160e01b600052602260045260246000fd5b50919050565b6000600019821415611ed257611ed2611ed9565b5060010190565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052603160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fdfe828634d95e775031b9ff576b159a8509d3053581a8c9c4d7d86899e0afcd882fa2646970667358221220353a3383b33e17a18bb3007a661269754cae482379594776b87c09ac69764f0b64736f6c63430008060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101425760003560e01c80638aeda25a116100b8578063b36c5da71161007c578063b36c5da71461031e578063b384abef1461034c578063ca15c8731461035f578063d4d2d91c14610372578063d547741f14610385578063eb1333521461039857600080fd5b80638aeda25a146102955780639010d07c146102aa57806391d14854146102d55780639f2524ee146102e8578063a217fddf1461031657600080fd5b806336568abe1161010a57806336568abe146101ea57806348760d16146101fd5780635c632b38146102105780636f499b881461023757806378935cd21461024a578063830639ac1461025d57600080fd5b806301ffc9a714610147578063157600011461016f5780631b0c27da14610184578063248a9ca3146101a45780632f2ff15d146101d5575b600080fd5b61015a610155366004611a3d565b6103ab565b60405190151581526020015b60405180910390f35b6101776103d6565b6040516101669190611cb7565b6101976101923660046119d6565b6103f6565b6040516101669190611c36565b6101c76101b23660046119d6565b60009081526020819052604090206001015490565b604051908152602001610166565b6101e86101e33660046119ef565b610511565b005b6101e86101f83660046119ef565b61053c565b6101e861020b366004611b02565b6105bf565b61022361021e3660046119d6565b610747565b604051610166989796959493929190611d51565b610177610245366004611991565b610824565b6101e86102583660046119d6565b610848565b61015a61026b3660046119ac565b60009081526003602090815260408083206001600160a01b03949094168352929052205460ff1690565b6101c7600080516020611f3283398151915281565b6102bd6102b8366004611a1b565b610939565b6040516001600160a01b039091168152602001610166565b61015a6102e33660046119ef565b610958565b61015a6102f63660046119ac565b600460209081526000928352604080842090915290825290205460ff1681565b6101c7600081565b61015a61032c3660046119ac565b600560209081526000928352604080842090915290825290205460ff1681565b6101e861035a366004611a1b565b610981565b6101c761036d3660046119d6565b610b3e565b6101e8610380366004611b4e565b610b55565b6101e86103933660046119ef565b610dcb565b6101e86103a6366004611a67565b610df1565b60006001600160e01b03198216635a05180f60e01b14806103d057506103d08261128d565b92915050565b3360009081526007602052604090206060906103f1906112c2565b905090565b606060026000838152602001908152602001600020600301805480602002602001604051908101604052809291908181526020016000905b8282101561050657838290600052602060002090600302016040518060600160405290816000820154815260200160018201805461046b90611e83565b80601f016020809104026020016040519081016040528092919081815260200182805461049790611e83565b80156104e45780601f106104b9576101008083540402835291602001916104e4565b820191906000526020600020905b8154815290600101906020018083116104c757829003601f168201915b505050505081526020016002820154815250508152602001906001019061042e565b505050509050919050565b60008281526020819052604090206001015461052d81336112cf565b6105378383611333565b505050565b6001600160a01b03811633146105b15760405162461bcd60e51b815260206004820152602f60248201527f416363657373436f6e74726f6c3a2063616e206f6e6c792072656e6f756e636560448201526e103937b632b9903337b91039b2b63360891b60648201526084015b60405180910390fd5b6105bb8282611355565b5050565b600080516020611f328339815191526105d881336112cf565b60008481526002602081905260409091200154600160a01b900460ff1615156001146106595760405162461bcd60e51b815260206004820152602a60248201527f6f6e6c79206b79632062616c6c6f742063616e20636f6e666967757265206173604482015269081dda1a5d195b1a5cdd60b21b60648201526084016105a8565b600084815260026020819052604090912001546001600160a01b031633146106c35760405162461bcd60e51b815260206004820152601c60248201527f6f6e6c79206f776e65722063616e2064656c6574652062616c6c6f740000000060448201526064016105a8565b60005b828110156107405760008581526003602052604081206001918686858181106106f1576106f1611f05565b90506020020160208101906107069190611991565b6001600160a01b031681526020810191909152604001600020805460ff19169115159190911790558061073881611ebe565b9150506106c6565b5050505050565b6002602052600090815260409020805460018201805491929161076990611e83565b80601f016020809104026020016040519081016040528092919081815260200182805461079590611e83565b80156107e25780601f106107b7576101008083540402835291602001916107e2565b820191906000526020600020905b8154815290600101906020018083116107c557829003601f168201915b5050505060028301546004840154600585015460069095015493946001600160a01b0383169460ff600160a01b850481169550600160a81b9094049093169288565b6001600160a01b03811660009081526007602052604090206060906103d0906112c2565b600080516020611f3283398151915261086181336112cf565b600082815260026020819052604090912001546001600160a01b031633146108cb5760405162461bcd60e51b815260206004820152601c60248201527f6f6e6c79206f776e65722063616e2064656c6574652062616c6c6f740000000060448201526064016105a8565b6000828152600260205260408120818155906108ea600183018261177b565b6002820180546001600160b01b031916905561090a6003830160006117b8565b506000600482018190556005820181905560069091018190553381526007602052604090206105379083611377565b60008281526001602052604081206109519083611383565b9392505050565b6000918252602082815260408084206001600160a01b0393909316845291905290205460ff1690565b60008281526002602081905260409091200154600160a01b900460ff1615610a1157600082815260036020908152604080832033845290915290205460ff161515600114610a115760405162461bcd60e51b815260206004820181905260248201527f6f6e6c792077686974656c697374656420766f746572732063616e20766f746560448201526064016105a8565b33600090815260046020908152604080832085845290915290205460ff1615610a8a5760405162461bcd60e51b815260206004820152602560248201527f766f7465722063616e206f6e6c7920766f7465206f6e636520666f7220612062604482015264185b1b1bdd60da1b60648201526084016105a8565b60008281526002602052604090206005015442108015610aba575060008281526002602052604090206004015442115b610ad65760405162461bcd60e51b81526004016105a890611d0e565b3360009081526004602090815260408083208584528252808320805460ff1916600117905560029091529020600301805482908110610b1757610b17611f05565b600091825260208220600260039092020101805491610b3583611ebe565b91905055505050565b60008181526001602052604081206103d09061138f565b60008281526002602081905260409091200154600160a01b900460ff1615610be557600082815260036020908152604080832033845290915290205460ff161515600114610be55760405162461bcd60e51b815260206004820152601f60248201527f6f6e6c792077686974656c697374656420766f746572732063616e206164640060448201526064016105a8565b60008281526002602081905260409091200154600160a81b900460ff161515600114610c6a5760405162461bcd60e51b815260206004820152602e60248201527f6f6e6c792062616c6c6f7420776974682063686f6963652061646461626c652060448201526d18d85b8818dbdb999a59dd5c995960921b60648201526084016105a8565b33600090815260056020908152604080832085845290915290205460ff1615610ce95760405162461bcd60e51b815260206004820152602b60248201527f766f7465722063616e206f6e6c79206164642063686f696365206f6e6365206660448201526a1bdc88184818985b1b1bdd60aa1b60648201526084016105a8565b60008281526002602052604090206005015442108015610d19575060008281526002602052604090206004015442115b610d355760405162461bcd60e51b81526004016105a890611d0e565b600082815260026020818152604080842060039081018054338752600585528387208988528552838720805460ff1916600190811790915595855283516060810185528181528086018981529481018790528254808801845592885296859020875192909302909201908155915180519195949293610db9938501929101906117d9565b50604082015181600201555050505050565b600082815260208190526040902060010154610de781336112cf565b6105378383611355565b600080516020611f32833981519152610e0a81336112cf565b60065460008181526002602090815260409091209182558951610e3392600101918b01906117d9565b50600680546000908152600260208190526040808320820180546001600160a01b031916331790558354835280832090910180548b1515600160a01b0260ff60a01b199091161790558254825280822083018590559154815220600401849055610e9d8385611dee565b600680546000908152600260205260408082206005019390935581548152919091200154610ff157600654600090815260026020908152604080832081516060810183528481528251808401845260048152635472756560e01b8186015281850190815292810185905260039182018054600181810183559187529585902082519690930290920194855591518051929493610f3f93928501929101906117d9565b50604091820151600291820155600654600090815260209182528281208351606081018552600180825285518087018752600581526446616c736560d81b8187015282860190815295820184905260039283018054808301825590855293859020825194909302909201928355935180519293610fc293928501929101906117d9565b50604091820151600291820155600654600090815260208290529190912001805460ff60a81b19169055611164565b60068054600090815260026020526040902001546001141561111c5760005b8581101561111657600260006006548152602001908152602001600020600301604051806060016040528083815260200189898581811061105357611053611f05565b90506020028101906110659190611da7565b8080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201829052509385525050506020918201819052835460018181018655948252908290208351600390920201908155828201518051939491936110da939285019291909101906117d9565b50604091820151600291820155600654600090815260208290529190912001805460ff60a81b191690558061110e81611ebe565b915050611010565b50611164565b600260006006548152602001908152602001600020600601546002141561116457600654600090815260026020819052604090912001805460ff60a81b1916600160a81b1790555b60065433600090815260076020526040902061117f91611399565b5060068054600081815260026020526040908190209092015491517fe3b20ae4b5bc1a82e41373281d0772ca7dd8a5c764fa0251192e374f6f3af7b8926111cd928252602082015260400190565b60405180910390a1600680549060006111e583611ebe565b91905055505050505050505050565b6111fe8282610958565b6105bb576000828152602081815260408083206001600160a01b03851684529091529020805460ff191660011790556112343390565b6001600160a01b0316816001600160a01b0316837f2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d60405160405180910390a45050565b6000610951836001600160a01b0384166113a1565b60006001600160e01b03198216637965db0b60e01b14806103d057506301ffc9a760e01b6001600160e01b03198316146103d0565b60606000610951836113f0565b6112d98282610958565b6105bb576112f1816001600160a01b0316601461144c565b6112fc83602061144c565b60405160200161130d929190611bc1565b60408051601f198184030181529082905262461bcd60e51b82526105a891600401611cfb565b61133d82826111f4565b60008281526001602052604090206105379082611278565b61135f82826115e8565b6000828152600160205260409020610537908261164d565b6000610951838361165e565b60006109518383611751565b60006103d0825490565b600061095183835b60008181526001830160205260408120546113e8575081546001818101845560008481526020808220909301849055845484825282860190935260409020919091556103d0565b5060006103d0565b60608160000180548060200260200160405190810160405280929190818152602001828054801561144057602002820191906000526020600020905b81548152602001906001019080831161142c575b50505050509050919050565b6060600061145b836002611e06565b611466906002611dee565b67ffffffffffffffff81111561147e5761147e611f1b565b6040519080825280601f01601f1916602001820160405280156114a8576020820181803683370190505b509050600360fc1b816000815181106114c3576114c3611f05565b60200101906001600160f81b031916908160001a905350600f60fb1b816001815181106114f2576114f2611f05565b60200101906001600160f81b031916908160001a9053506000611516846002611e06565b611521906001611dee565b90505b6001811115611599576f181899199a1a9b1b9c1cb0b131b232b360811b85600f166010811061155557611555611f05565b1a60f81b82828151811061156b5761156b611f05565b60200101906001600160f81b031916908160001a90535060049490941c9361159281611e6c565b9050611524565b5083156109515760405162461bcd60e51b815260206004820181905260248201527f537472696e67733a20686578206c656e67746820696e73756666696369656e7460448201526064016105a8565b6115f28282610958565b156105bb576000828152602081815260408083206001600160a01b0385168085529252808320805460ff1916905551339285917ff6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b9190a45050565b6000610951836001600160a01b0384165b60008181526001830160205260408120548015611747576000611682600183611e25565b855490915060009061169690600190611e25565b90508181146116fb5760008660000182815481106116b6576116b6611f05565b90600052602060002001549050808760000184815481106116d9576116d9611f05565b6000918252602080832090910192909255918252600188019052604090208390555b855486908061170c5761170c611eef565b6001900381819060005260206000200160009055905585600101600086815260200190815260200160002060009055600193505050506103d0565b60009150506103d0565b600082600001828154811061176857611768611f05565b9060005260206000200154905092915050565b50805461178790611e83565b6000825580601f10611797575050565b601f0160209004906000526020600020908101906117b5919061185d565b50565b50805460008255600302906000526020600020908101906117b59190611872565b8280546117e590611e83565b90600052602060002090601f016020900481019282611807576000855561184d565b82601f1061182057805160ff191683800117855561184d565b8280016001018555821561184d579182015b8281111561184d578251825591602001919060010190611832565b5061185992915061185d565b5090565b5b80821115611859576000815560010161185e565b8082111561185957600080825561188c600183018261177b565b5060006002820155600301611872565b80356001600160a01b03811681146118b357600080fd5b919050565b60008083601f8401126118ca57600080fd5b50813567ffffffffffffffff8111156118e257600080fd5b6020830191508360208260051b85010111156118fd57600080fd5b9250929050565b600082601f83011261191557600080fd5b813567ffffffffffffffff8082111561193057611930611f1b565b604051601f8301601f19908116603f0116810190828211818310171561195857611958611f1b565b8160405283815286602085880101111561197157600080fd5b836020870160208301376000602085830101528094505050505092915050565b6000602082840312156119a357600080fd5b6109518261189c565b600080604083850312156119bf57600080fd5b6119c88361189c565b946020939093013593505050565b6000602082840312156119e857600080fd5b5035919050565b60008060408385031215611a0257600080fd5b82359150611a126020840161189c565b90509250929050565b60008060408385031215611a2e57600080fd5b50508035926020909101359150565b600060208284031215611a4f57600080fd5b81356001600160e01b03198116811461095157600080fd5b600080600080600080600060c0888a031215611a8257600080fd5b873567ffffffffffffffff80821115611a9a57600080fd5b611aa68b838c01611904565b985060208a013591508115158214611abd57600080fd5b90965060408901359080821115611ad357600080fd5b50611ae08a828b016118b8565b989b979a50986060810135976080820135975060a09091013595509350505050565b600080600060408486031215611b1757600080fd5b83359250602084013567ffffffffffffffff811115611b3557600080fd5b611b41868287016118b8565b9497909650939450505050565b60008060408385031215611b6157600080fd5b82359150602083013567ffffffffffffffff811115611b7f57600080fd5b611b8b85828601611904565b9150509250929050565b60008151808452611bad816020860160208601611e3c565b601f01601f19169290920160200192915050565b7f416363657373436f6e74726f6c3a206163636f756e7420000000000000000000815260008351611bf9816017850160208801611e3c565b7001034b99036b4b9b9b4b733903937b6329607d1b6017918401918201528351611c2a816028840160208801611e3c565b01602801949350505050565b60006020808301818452808551808352604092508286019150828160051b87010184880160005b83811015611ca957603f19898403018552815160608151855288820151818a870152611c8b82870182611b95565b92890151958901959095525094870194925090860190600101611c5d565b509098975050505050505050565b6020808252825182820181905260009190848201906040850190845b81811015611cef57835183529284019291840191600101611cd3565b50909695505050505050565b6020815260006109516020830184611b95565b60208082526023908201527f63616e206f6e6c7920766f746520756e74696c2062616c6c6f7420656e64206460408201526261746560e81b606082015260800190565b60006101008a8352806020840152611d6b8184018b611b95565b6001600160a01b0399909916604084015250509415156060860152921515608085015260a084019190915260c083015260e09091015292915050565b6000808335601e19843603018112611dbe57600080fd5b83018035915067ffffffffffffffff821115611dd957600080fd5b6020019150368190038213156118fd57600080fd5b60008219821115611e0157611e01611ed9565b500190565b6000816000190483118215151615611e2057611e20611ed9565b500290565b600082821015611e3757611e37611ed9565b500390565b60005b83811015611e57578181015183820152602001611e3f565b83811115611e66576000848401525b50505050565b600081611e7b57611e7b611ed9565b506000190190565b600181811c90821680611e9757607f821691505b60208210811415611eb857634e487b7160e01b600052602260045260246000fd5b50919050565b6000600019821415611ed257611ed2611ed9565b5060010190565b634e487b7160e01b600052601160045260246000fd5b634e487b7160e01b600052603160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052604160045260246000fdfe828634d95e775031b9ff576b159a8509d3053581a8c9c4d7d86899e0afcd882fa2646970667358221220353a3383b33e17a18bb3007a661269754cae482379594776b87c09ac69764f0b64736f6c63430008060033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getRoleAdmin(bytes32)": {
+        "details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+      },
+      "getRoleMember(bytes32,uint256)": {
+        "details": "Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+      },
+      "getRoleMemberCount(bytes32)": {
+        "details": "Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role."
+      },
+      "grantRole(bytes32,address)": {
+        "details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
+      },
+      "hasRole(bytes32,address)": {
+        "details": "Returns `true` if `account` has been granted `role`."
+      },
+      "renounceRole(bytes32,address)": {
+        "details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
+      },
+      "revokeRole(bytes32,address)": {
+        "details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role."
+      },
+      "supportsInterface(bytes4)": {
+        "details": "See {IERC165-supportsInterface}."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 722,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "_roles",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_bytes32,t_struct(RoleData)717_storage)"
+      },
+      {
+        "astId": 1025,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "_roleMembers",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(AddressSet)7173_storage)"
+      },
+      {
+        "astId": 47,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "ballots",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_uint256,t_struct(Ballot)42_storage)"
+      },
+      {
+        "astId": 53,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "whitelistedvoters",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_uint256,t_mapping(t_address,t_bool))"
+      },
+      {
+        "astId": 59,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "votes",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))"
+      },
+      {
+        "astId": 65,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "addchoices",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))"
+      },
+      {
+        "astId": 73,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "nextBallotId",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 78,
+        "contract": "contracts/Voting.sol:Voting",
+        "label": "creatorBallotIds",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_mapping(t_address,t_struct(UintSet)7330_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_bytes32)dyn_storage": {
+        "base": "t_bytes32",
+        "encoding": "dynamic_array",
+        "label": "bytes32[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_struct(Choice)21_storage)dyn_storage": {
+        "base": "t_struct(Choice)21_storage",
+        "encoding": "dynamic_array",
+        "label": "struct Voting.Choice[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_mapping(t_uint256,t_bool))": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => mapping(uint256 => bool))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_uint256,t_bool)"
+      },
+      "t_mapping(t_address,t_struct(UintSet)7330_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct EnumerableSet.UintSet)",
+        "numberOfBytes": "32",
+        "value": "t_struct(UintSet)7330_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(AddressSet)7173_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct EnumerableSet.AddressSet)",
+        "numberOfBytes": "32",
+        "value": "t_struct(AddressSet)7173_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(RoleData)717_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct AccessControl.RoleData)",
+        "numberOfBytes": "32",
+        "value": "t_struct(RoleData)717_storage"
+      },
+      "t_mapping(t_bytes32,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_uint256,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_uint256,t_mapping(t_address,t_bool))": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => mapping(address => bool))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_bool)"
+      },
+      "t_mapping(t_uint256,t_struct(Ballot)42_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct Voting.Ballot)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Ballot)42_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(AddressSet)7173_storage": {
+        "encoding": "inplace",
+        "label": "struct EnumerableSet.AddressSet",
+        "members": [
+          {
+            "astId": 7172,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "_inner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_struct(Set)6872_storage"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Ballot)42_storage": {
+        "encoding": "inplace",
+        "label": "struct Voting.Ballot",
+        "members": [
+          {
+            "astId": 23,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "id",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 25,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "name",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 27,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "owner",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address"
+          },
+          {
+            "astId": 29,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "isKyc",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool"
+          },
+          {
+            "astId": 31,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "isChoiceAddable",
+            "offset": 21,
+            "slot": "2",
+            "type": "t_bool"
+          },
+          {
+            "astId": 35,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "choices",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Choice)21_storage)dyn_storage"
+          },
+          {
+            "astId": 37,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "start",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 39,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "end",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 41,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "ballotType",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "224"
+      },
+      "t_struct(Choice)21_storage": {
+        "encoding": "inplace",
+        "label": "struct Voting.Choice",
+        "members": [
+          {
+            "astId": 16,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "id",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 18,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "name",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 20,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "votes",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "96"
+      },
+      "t_struct(RoleData)717_storage": {
+        "encoding": "inplace",
+        "label": "struct AccessControl.RoleData",
+        "members": [
+          {
+            "astId": 714,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          },
+          {
+            "astId": 716,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "adminRole",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Set)6872_storage": {
+        "encoding": "inplace",
+        "label": "struct EnumerableSet.Set",
+        "members": [
+          {
+            "astId": 6867,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "_values",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_array(t_bytes32)dyn_storage"
+          },
+          {
+            "astId": 6871,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "_indexes",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_bytes32,t_uint256)"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(UintSet)7330_storage": {
+        "encoding": "inplace",
+        "label": "struct EnumerableSet.UintSet",
+        "members": [
+          {
+            "astId": 7329,
+            "contract": "contracts/Voting.sol:Voting",
+            "label": "_inner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_struct(Set)6872_storage"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
