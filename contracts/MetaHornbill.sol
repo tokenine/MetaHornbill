@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 contract MetaHornbill is Ownable, ERC721, ERC721Enumerable, ReentrancyGuard {
     using Strings for uint256;
 
-    uint256 public constant MINT_COST = 0.001 ether;
+    uint256 public constant MINT_COST = 0.5 ether;
     uint256 public immutable AVAILABLE_SUPPLY;
     uint256 public MINT_PRE_START_TIME;
     uint256 public MINT_START_TIME;

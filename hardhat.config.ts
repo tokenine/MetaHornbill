@@ -97,42 +97,7 @@ const config: HardhatUserConfig = {
       97: "0x2a7b39f35fA3e0bFBFD0136E43Cb9c7feb6625Cc",
     },
 
-    weth: {
-      31337: "0x2170ed0880ac9a755fd29b2688956bd959f933f8", 
-      56: "0x2170ed0880ac9a755fd29b2688956bd959f933f8", //Mapped from https://bscscan.com/address/0x2170ed0880ac9a755fd29b2688956bd959f933f8
-      97: "0xA3234ceaaf5877239738a71B1ea24b86f8EF7D5C",
-    },
-
-    usdt: {
-      31337: "0x55d398326f99059ff775485246999027b3197955", 
-      56: "0x55d398326f99059ff775485246999027b3197955", //Mapped from https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955
-      97: "0xd8f40b596bf1a519478888443be550f65c2ca42e",
-    },
-
-    wbnb: {
-      31337: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", 
-      56: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", //Mapped from https://bscscan.com/address/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c
-      97: "0xEDCC8D4604691CdA5461b9fB42053005Da511588",
-    },
-
-    busdChainlinkOracle: {
-      31337: "0xcBb98864Ef56E9042e7d2efef76141f15731B82f", //Mock to mainnet
-      56: "0xcBb98864Ef56E9042e7d2efef76141f15731B82f", //Mapped from  https://docs.chain.link/docs/binance-smart-chain-addresses/
-      97: "0x9331b55D9830EF609A2aBCfAc0FBCE050A52fdEa",
-    },
-
-
-    pancakefactory: {
-      31337: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73", 
-      56: "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73", // Mapped from  https://bscscan.com/address/0xca143ce32fe78f1f7019d7d551a6402fc5350c73#readContract
-      97: "0x0000000000000000000000000000000000000000",
-    },
-
-    pancakerouter: {
-      31337: "0x10ED43C718714eb63d5aA57B78B54704E256024E", // Mapped from  https://bscscan.com/address/0xca143ce32fe78f1f7019d7d551a6402fc5350c73#readContract
-      56: "0x10ED43C718714eb63d5aA57B78B54704E256024E", //TODO
-      97: "0x0000000000000000000000000000000000000000",
-    },
+    
 
 
   },

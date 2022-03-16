@@ -47,9 +47,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   MetaHornbillArgs[`_NFT_NAM`] = 'MetaHornbill';
   MetaHornbillArgs[`_NFT_SYMBOL`] = 'AFIN';
   MetaHornbillArgs[`_AVAILABLE_SUPPLY`] = 5;
-  MetaHornbillArgs[`_MINT_PRE_START_TIME`] = 1646154264;
-  MetaHornbillArgs[`_MINT_START_TIME`] = 1746154264;
-  MetaHornbillArgs[`_MINT_END_TIME`] = 1846154264;
+  MetaHornbillArgs[`_MINT_PRE_START_TIME`] = 1648904400;
+  MetaHornbillArgs[`_MINT_START_TIME`] = 1649077200;
+  MetaHornbillArgs[`_MINT_END_TIME`] = 1649250000;
   MetaHornbillArgs[`_afin`] = afinAddress;
   MetaHornbillArgs[`_mvp`] = mvpAddress;
 
